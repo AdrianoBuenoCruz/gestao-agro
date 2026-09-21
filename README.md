@@ -1,26 +1,81 @@
-# 🌾 Gestão Agro
+# 🌾 Gestor Agro
 
-Sistema desenvolvido para auxiliar na gestão e organização de atividades do setor agropecuário.
+Sistema Web de Gestão Agrícola desenvolvido para auxiliar no
+gerenciamento de propriedades rurais, produção, finanças,
+equipamentos e colaboradores.
 
-## 🎯 Objetivo
+---
 
-O projeto está sendo desenvolvido com o objetivo de criar uma solução tecnológica para facilitar o gerenciamento de informações e atividades relacionadas ao setor agro.
+## 🎯 Sobre o projeto
 
-## 🚧 Status
+O **Gestor Agro** é uma plataforma de gestão agrícola que reúne
+informações importantes da propriedade em um único painel de controle.
 
-🔨 **Em desenvolvimento**
+O sistema apresenta indicadores e informações de forma visual,
+facilitando o acompanhamento da operação agrícola e da situação
+financeira da propriedade.
 
-Novas funcionalidades estão sendo implementadas.
+---
 
-## 🛠️ Tecnologias
+## 📊 Dashboard
 
-> Tecnologias serão adicionadas conforme o desenvolvimento do projeto.
+O painel apresenta indicadores como:
 
-## 📌 Funcionalidades
+- 💰 Saldo financeiro
+- 🔧 Equipamentos em manutenção
+- 🌾 Quantidade colhida
+- 📐 Área já colhida
+- ⚙️ Operações ativas
+- 🏡 Área total da fazenda
+- 👥 Colaboradores ativos
 
-- 🚧 Em desenvolvimento
-- 🚧 Em desenvolvimento
-- 🚧 Em desenvolvimento
+---
+
+## ✨ Funcionalidades
+
+### 💰 Gestão financeira
+
+- Cadastro de receitas
+- Cadastro de despesas
+- Registro de lançamentos financeiros
+- Visualização de receitas e despesas
+- Informações de valores e formas de pagamento
+
+### 🌱 Gestão agrícola
+
+- Acompanhamento da produção
+- Controle de quantidade colhida
+- Controle de área cultivada e colhida
+- Acompanhamento por cultura
+
+### 🚜 Equipamentos
+
+- Controle de equipamentos
+- Acompanhamento de equipamentos em manutenção
+
+### 👥 Colaboradores
+
+- Controle de colaboradores ativos
+
+### 📊 Indicadores e gráficos
+
+- Receitas × despesas
+- Produção por cultura
+- Indicadores gerais da propriedade
+
+---
+
+## 🖥️ Tecnologias
+
+> Adicione aqui as tecnologias realmente utilizadas no projeto.
+
+---
+
+## 📌 Status
+
+✅ **Projeto concluído**
+
+---
 
 ## 👨‍💻 Desenvolvedor
 
@@ -30,4 +85,5 @@ Novas funcionalidades estão sendo implementadas.
 
 ---
 
-⭐ Projeto em desenvolvimento.
+⭐ Projeto desenvolvido para aplicação prática de tecnologia
+na gestão agrícola.
