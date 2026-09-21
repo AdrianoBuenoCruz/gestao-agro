@@ -18,7 +18,9 @@ financeira da propriedade.
 ---
 
 ## 📊 Dashboard
+### 🖥️ Visualização do sistema
 
+![Dashboard do Gestor Agro](PainelGeral.png)
 O painel apresenta indicadores como:
 
 - 💰 Saldo financeiro
