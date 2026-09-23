@@ -1,91 +1,38 @@
 # 🌾 Gestor Agro
 
-Sistema Web de Gestão Agrícola desenvolvido para auxiliar no
-gerenciamento de propriedades rurais, produção, finanças,
-equipamentos e colaboradores.
+**Sistema web para gestão agrícola**, desenvolvido por Adriano Bueno como projeto do Bacharelado em Sistemas de Informação da Universidade Estadual de Goiás (UEG).
 
----
+O Gestor Agro reúne informações da propriedade em um painel para acompanhar a produção, as finanças, os equipamentos e as atividades da equipe.
 
-## 🎯 Sobre o projeto
+## Visão do sistema
 
-O **Gestor Agro** é uma plataforma de gestão agrícola que reúne
-informações importantes da propriedade em um único painel de controle.
+![Painel geral do Gestor Agro](PainelGeral.png)
 
-O sistema apresenta indicadores e informações de forma visual,
-facilitando o acompanhamento da operação agrícola e da situação
-financeira da propriedade.
+O painel apresenta indicadores como saldo financeiro, quantidade e área colhida, operações ativas, colaboradores ativos e equipamentos em manutenção.
 
----
+## Funcionalidades
 
-## 📊 Dashboard
-### 🖥️ Visualização do sistema
+| Área | O que permite acompanhar |
+| --- | --- |
+| 🌱 **Safras e produção** | Culturas, quantidade produzida e área cultivada ou colhida. |
+| 💰 **Financeiro** | Receitas, despesas, lançamentos e formas de pagamento. |
+| 🚜 **Equipamentos** | Cadastro e situação de tratores, colheitadeiras, plantadeiras e pulverizadores. |
+| ⚙️ **Operações e manutenção** | Atividades com máquinas, operadores e registros de manutenção. |
+| 👥 **Colaboradores e usuários** | Equipe, perfis de acesso e permissões por função. |
+| 📊 **Indicadores** | Resumos visuais da produção e das finanças da propriedade. |
 
-![Dashboard do Gestor Agro](PainelGeral.png)
-O painel apresenta indicadores como:
+## Tecnologias
 
-- 💰 Saldo financeiro
-- 🔧 Equipamentos em manutenção
-- 🌾 Quantidade colhida
-- 📐 Área já colhida
-- ⚙️ Operações ativas
-- 🏡 Área total da fazenda
-- 👥 Colaboradores ativos
+**PHP, PDO, MySQL, HTML, CSS, JavaScript e Bootstrap.**
 
----
+## Estado do projeto
 
-## ✨ Funcionalidades
+A aplicação possui uma **versão funcional**. A documentação acadêmica do TCC está em revisão para apresentação.
 
-### 💰 Gestão financeira
+Este repositório público apresenta o projeto e uma imagem do painel. **O código-fonte da aplicação não está publicado aqui.**
 
-- Cadastro de receitas
-- Cadastro de despesas
-- Registro de lançamentos financeiros
-- Visualização de receitas e despesas
-- Informações de valores e formas de pagamento
+## Autor
 
-### 🌱 Gestão agrícola
+**Adriano Bueno** · [GitHub](https://github.com/AdrianoBuenoCruz)
 
-- Acompanhamento da produção
-- Controle de quantidade colhida
-- Controle de área cultivada e colhida
-- Acompanhamento por cultura
-
-### 🚜 Equipamentos
-
-- Controle de equipamentos
-- Acompanhamento de equipamentos em manutenção
-
-### 👥 Colaboradores
-
-- Controle de colaboradores ativos
-
-### 📊 Indicadores e gráficos
-
-- Receitas × despesas
-- Produção por cultura
-- Indicadores gerais da propriedade
-
----
-
-## 🖥️ Tecnologias
-
-> Adicione aqui as tecnologias realmente utilizadas no projeto.
-
----
-
-## 📌 Status
-
-✅ **Projeto concluído**
-
----
-
-## 👨‍💻 Desenvolvedor
-
-**Adriano Bueno**
-
-🎓 Sistemas de Informação — UEG
-
----
-
-⭐ Projeto desenvolvido para aplicação prática de tecnologia
-na gestão agrícola.
+Bacharelado em Sistemas de Informação · UEG
