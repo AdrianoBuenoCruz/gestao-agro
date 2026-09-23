@@ -1,0 +1,389 @@
+/* ===================================================================
+   FN AGROPECUÁRIA — TELA DE LOGIN
+   Paleta: oliva profundo, terracota, creme natural, dourado-trigo
+   Tipografia: Fraunces (display) + Inter (corpo/UI)
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --oliva-900: #1F2D1A;
+    --oliva-800: #243823;
+    --oliva-700: #2E4A2B;
+    --terra-600: #A8633B;
+    --terra-700: #8F4F2D;
+    --trigo-500: #C9A04D;
+    --trigo-300: #E1C383;
+    --creme-100: #F7F3E9;
+    --creme-50:  #FCFAF4;
+    --tinta-900: #152011;
+    --tinta-600: #4B5A45;
+    --linha:     rgba(21, 32, 17, 0.10);
+    --sombra:    rgba(21, 32, 17, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--tinta-900);
+    background: var(--creme-50);
+}
+
+/* ============ ESTRUTURA GERAL ============ */
+
+.split-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ============ LADO ESQUERDO — BANNER ============ */
+
+.login-banner {
+    position: relative;
+    flex: 1.15;
+    background: linear-gradient(160deg, var(--oliva-900) 0%, var(--oliva-700) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px;
+    overflow: hidden;
+}
+
+/* Textura: sulcos de plantio — linhas diagonais finas, como terra arada */
+.login-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        115deg,
+        rgba(247, 243, 233, 0.05) 0px,
+        rgba(247, 243, 233, 0.05) 1.5px,
+        transparent 1.5px,
+        transparent 46px
+    );
+    pointer-events: none;
+}
+
+/* Vinheta dourada sutil ancorando o canto inferior — "horizonte ao amanhecer" */
+.login-banner::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    bottom: -25%;
+    width: 75%;
+    height: 65%;
+    background: radial-gradient(circle, rgba(201, 160, 77, 0.22) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 460px;
+}
+
+.banner-conteudo::before {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 4px;
+    background: var(--trigo-500);
+    margin-bottom: 28px;
+    border-radius: 2px;
+}
+
+.banner-conteudo h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.22;
+    color: var(--creme-50);
+    margin: 0 0 20px 0;
+    letter-spacing: -0.01em;
+}
+
+.banner-conteudo p {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: rgba(247, 243, 233, 0.78);
+    margin: 0;
+}
+
+/* ============ WIDGET DE CLIMA ============ */
+
+.banner-clima {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    padding: 12px 18px;
+    background: rgba(247, 243, 233, 0.08);
+    border: 1px solid rgba(247, 243, 233, 0.14);
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.clima-icone {
+    font-size: 1.9rem;
+    line-height: 1;
+}
+
+.clima-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.clima-info strong {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--creme-50);
+    line-height: 1;
+}
+
+.clima-info span {
+    font-size: 0.78rem;
+    color: rgba(247, 243, 233, 0.65);
+    letter-spacing: 0.01em;
+}
+
+/* ============ LADO DIREITO — FORMULÁRIO ============ */
+
+.login-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--creme-50);
+    padding: 48px 32px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 48px 44px 40px;
+    background: var(--creme-100);
+    border: 1px solid var(--linha);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(21, 32, 17, 0.04),
+                0 12px 28px -16px var(--sombra);
+}
+
+.login-box h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--oliva-900);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+}
+
+.login-box .descricao {
+    font-size: 0.9rem;
+    color: var(--tinta-600);
+    margin: 0 0 30px 0;
+}
+
+/* ============ CAMPOS DO FORMULÁRIO ============ */
+
+.campo {
+    margin-bottom: 22px;
+}
+
+.campo label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--tinta-600);
+    margin-bottom: 7px;
+}
+
+.campo input[type="text"],
+.campo input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.96rem;
+    color: var(--tinta-900);
+    background: #fff;
+    border: 1px solid var(--linha);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.campo input[type="text"]::placeholder,
+.campo input[type="password"]::placeholder {
+    color: rgba(75, 90, 69, 0.45);
+}
+
+.campo input[type="text"]:focus,
+.campo input[type="password"]:focus {
+    border-color: var(--terra-600);
+    box-shadow: 0 0 0 3px rgba(168, 99, 59, 0.12);
+}
+
+.esqueci-senha {
+    font-size: 0.8rem;
+    color: var(--terra-600);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.esqueci-senha:hover {
+    color: var(--terra-700);
+    text-decoration: underline;
+}
+
+/* ============ CAPTCHA ============ */
+
+.captcha-wrapper {
+    margin: 8px 0 22px;
+    display: flex;
+    justify-content: center;
+    transform: scale(0.96);
+    transform-origin: center;
+}
+
+/* ============ BOTÃO PRINCIPAL ============ */
+
+.btn-entrar {
+    width: 100%;
+    padding: 13px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--creme-50);
+    background: var(--terra-600);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.btn-entrar:hover {
+    background: var(--terra-700);
+}
+
+.btn-entrar:active {
+    background: var(--terra-700);
+    opacity: 0.92;
+}
+
+/* ============ DIVISOR "OU ACESSE COM" ============ */
+
+.divisor {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 0.76rem;
+    color: var(--tinta-600);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 26px 0 20px;
+}
+
+.divisor::before,
+.divisor::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--linha);
+}
+
+.divisor::before {
+    margin-right: 12px;
+}
+
+.divisor::after {
+    margin-left: 12px;
+}
+
+/* ============ ALERTA DE ERRO ============ */
+
+.alert-danger {
+    background: rgba(168, 99, 59, 0.1);
+    border: 1px solid rgba(168, 99, 59, 0.35);
+    color: var(--terra-700);
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+/* ============ RODAPÉ ============ */
+
+.footer-login {
+    text-align: center;
+    margin-top: 28px;
+}
+
+.footer-login p {
+    font-size: 0.74rem;
+    color: rgba(75, 90, 69, 0.7);
+    margin: 0;
+}
+
+/* ============ ACESSIBILIDADE: FOCO VISÍVEL ============ */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--trigo-500);
+    outline-offset: 2px;
+}
+
+/* ============ RESPONSIVO ============ */
+
+@media (max-width: 900px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .login-banner {
+        flex: none;
+        min-height: 240px;
+        padding: 40px 32px;
+    }
+
+    .banner-conteudo h2 {
+        font-size: 1.7rem;
+    }
+
+    .banner-conteudo p {
+        font-size: 0.92rem;
+    }
+
+    .login-area {
+        flex: none;
+        padding: 36px 24px 48px;
+    }
+
+    .login-box {
+        padding: 36px 28px 28px;
+    }
+}
+
+@media (max-width: 420px) {
+    .login-box {
+        padding: 30px 22px 24px;
+    }
+
+    .banner-conteudo h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ============ RESPEITO A REDUÇÃO DE MOVIMENTO ============ */
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-entrar {
+        transition: none;
+    }
+}

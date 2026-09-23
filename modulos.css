@@ -1,0 +1,419 @@
+/* ============================================================
+   AgroGestão — Sistema de Gestão Agrícola
+   Identidade visual: tons de terra e plantação.
+   Tipografia: Fraunces (títulos) + Inter (corpo/dados)
+   ============================================================ */
+
+:root {
+    --verde-mata: #1F3D2B;     /* fundo da barra lateral */
+    --verde-musgo: #3F6B47;    /* verde principal / botões */
+    --verde-claro: #6E9B70;    /* hover e detalhes suaves */
+    --dourado: #C99A3B;        /* destaque / dados positivos */
+    --terracota: #A8552F;      /* alertas suaves / despesas */
+    --creme: #F6F2E9;          /* fundo geral da página */
+    --creme-card: #FFFEFB;     /* fundo dos cartões */
+    --tinta: #232619;          /* texto principal */
+    --tinta-suave: #6B6A5C;    /* texto secundário */
+    --borda: #E5DFD0;          /* bordas sutis */
+    --raio: 0.6rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    background-color: var(--creme);
+    color: var(--tinta);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 0.94rem;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, .brand-font {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--verde-mata);
+    letter-spacing: -0.01em;
+}
+
+a { color: var(--verde-musgo); text-decoration: none; }
+a:hover { color: var(--verde-mata); }
+
+.text-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
+}
+
+/* ---------------- Layout geral ---------------- */
+.wrapper, .app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--verde-mata) 0%, #16291C 100%);
+    color: #EFE9D8;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left .25s ease;
+}
+
+.sidebar .brand {
+    padding: 1.5rem 1.25rem 1.1rem;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.sidebar .brand-font {
+    color: #F7F3E8;
+    font-size: 1.45rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.sidebar .brand-rule {
+    width: 38px;
+    height: 3px;
+    background: var(--dourado);
+    margin-top: .55rem;
+    border-radius: 2px;
+}
+
+.sidebar .brand small {
+    display: block;
+    color: #B9C9B6;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-top: .35rem;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem .75rem;
+    overflow-y: auto;
+}
+
+/* Suporte a botões de navegação estruturados como itens */
+.sidebar-nav .nav-link, .sidebar-nav .item {
+    color: #D7E0D2;
+    padding: .55rem .8rem;
+    border-radius: .45rem;
+    font-size: .9rem;
+    display: flex;
+    align-items: center;
+    gap: .65rem;
+    margin-bottom: .15rem;
+    transition: background .15s ease, color .15s ease;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar-nav .nav-link i, .sidebar-nav .item i { 
+    font-size: 1.05rem; 
+    width: 1.1rem; 
+    text-align: center; 
+    opacity: .9; 
+}
+
+.sidebar-nav .nav-link:hover, .sidebar-nav .item:hover {
+    background: rgba(255,255,255,.07);
+    color: #fff;
+}
+
+.sidebar-nav .nav-link.active, .sidebar-nav .item.active {
+    background: var(--dourado);
+    color: #2A2106;
+    font-weight: 600;
+}
+
+.sidebar-nav .nav-link.active i, .sidebar-nav .item.active i { opacity: 1; }
+
+/* Submenus para a seção de Máquinas */
+.sidebar-nav .subnav {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.sidebar-nav .subitem {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    color: #B9C9B6;
+}
+.sidebar-nav .subitem:hover {
+    color: #fff;
+}
+
+.sidebar-foot {
+    padding: 1rem 1.1rem;
+    border-top: 1px solid rgba(255,255,255,.08);
+    font-size: .78rem;
+    color: #9FB29C;
+}
+
+.main-content, .main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    background: var(--creme-card);
+    border-bottom: 1px solid var(--borda);
+    padding: .75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar .page-heading { margin: 0; font-size: 1.25rem; }
+
+.btn-sidebar-toggle {
+    border: 1px solid var(--borda);
+    background: #fff;
+    border-radius: .5rem;
+    width: 38px; height: 38px;
+}
+
+.user-chip {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: .85rem;
+}
+
+.user-chip .avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--verde-musgo);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 600;
+    font-family: 'Fraunces', serif;
+}
+
+/* ---------------- Cartões ---------------- */
+.card {
+    background: var(--creme-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+}
+
+.stat-card {
+    border-top: 4px solid var(--verde-musgo);
+    padding: 1.1rem 1.25rem;
+    height: 100%;
+}
+
+.stat-card.is-gold { border-top-color: var(--dourado); }
+.stat-card.is-terra { border-top-color: var(--terracota); }
+.stat-card.is-mata { border-top-color: var(--verde-mata); }
+
+.stat-card .stat-value {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--verde-mata);
+    line-height: 1.05;
+}
+
+.stat-card .stat-label {
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--tinta-suave);
+    font-weight: 600;
+}
+
+.stat-card .stat-icon {
+    font-size: 1.4rem;
+    color: var(--verde-musgo);
+    opacity: .85;
+}
+
+/* ---------------- Tabelas ---------------- */
+.table { margin-bottom: 0; }
+.table thead th {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--tinta-suave);
+    border-bottom: 2px solid var(--borda);
+    font-weight: 600;
+    white-space: nowrap;
+}
+.table td { vertical-align: middle; border-color: var(--borda); }
+.table-hover tbody tr:hover { background-color: #FBF8F0; }
+
+.row-low-stock { background-color: #FBEFE8 !important; }
+
+/* Painel ampliado e módulos MVC */
+.farm-panel {
+    background: linear-gradient(135deg, #FFFEFB 0%, #EDF4EC 100%);
+    border-left: 4px solid var(--verde-musgo);
+}
+
+.farm-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(125px, 1fr));
+    gap: 1rem;
+}
+
+.farm-metrics div {
+    padding-left: 1rem;
+    border-left: 1px solid var(--borda);
+}
+
+.farm-metrics strong, .farm-metrics span { display: block; }
+.farm-metrics strong { color: var(--verde-mata); font-family: 'Fraunces', serif; }
+.farm-metrics span { color: var(--tinta-suave); font-size: .72rem; margin-top: .2rem; }
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.section-heading h2 { margin: .15rem 0 0; }
+.section-heading p { margin: 0; font-size: .85rem; }
+.permission-summary small { display: block; color: var(--tinta-suave); margin-top: .45rem; }
+.badge-status { font-weight: 600; padding: .38rem .55rem; border-radius: 999px; }
+.badge-status.is-active { color: #245331; background: #E5F3E8; }
+.badge-status.is-warning { color: #7A4B00; background: #FFF1CC; }
+.badge-status.is-danger { color: #7A271A; background: #FBE7E3; }
+.badge-status.is-muted { color: #555; background: #ECECEC; }
+
+@media (max-width: 900px) {
+    .farm-metrics { grid-template-columns: 1fr; width: 100%; }
+    .farm-metrics div { border-left: 0; border-top: 1px solid var(--borda); padding: .65rem 0 0; }
+    .section-heading { align-items: start; flex-direction: column; }
+}
+
+/* ---------------- Botões ---------------- */
+.btn-primary {
+    background-color: var(--verde-musgo);
+    border-color: var(--verde-musgo);
+    color: #fff;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--verde-mata);
+    border-color: var(--verde-mata);
+    color: #fff;
+}
+.btn-outline-primary {
+    color: var(--verde-musgo);
+    border-color: var(--verde-musgo);
+    background: transparent;
+}
+.btn-outline-primary:hover {
+    background-color: var(--verde-musgo);
+    border-color: var(--verde-musgo);
+    color: #fff;
+}
+.btn-warning { background-color: var(--dourado); border-color: var(--dourado); color: #2A2106; }
+.btn-warning:hover { background-color: #b3872f; border-color: #b3872f; color: #2A2106; }
+
+/* ---------------- Formulários ---------------- */
+.form-label { font-size: .85rem; font-weight: 600; color: var(--tinta); }
+.form-control:focus, .form-select:focus {
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 0 .2rem rgba(63,107,71,.15);
+}
+
+/* ---------------- Badges de status ---------------- */
+.badge-status { font-weight: 600; font-size: .72rem; padding: .35em .6em; }
+
+/* ---------------- Seções de Módulo Dinâmico ---------------- */
+.modulo {
+    display: none; /* Controlado via JS (modulos.js) */
+}
+.modulo.ativo, .modulo.active {
+    display: block !important;
+}
+
+/* ---------------- Login ---------------- */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, #2A4D34 0%, var(--verde-mata) 45%, #16291C 100%);
+    padding: 1rem;
+}
+
+.login-card {
+    background: var(--creme-card);
+    border-radius: 1rem;
+    overflow: hidden;
+    max-width: 880px;
+    width: 100%;
+    box-shadow: 0 30px 60px rgba(0,0,0,.25);
+    display: flex;
+}
+
+.login-side {
+    background: linear-gradient(160deg, var(--verde-mata), #102015);
+    color: #F2EEDD;
+    flex: 1;
+    padding: 2.75rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-side .brand-font { color: #fff; font-size: 1.9rem; font-style: italic; }
+
+.login-form-wrap {
+    flex: 1;
+    padding: 2.75rem 2.5rem;
+}
+
+@media (max-width: 767.98px) {
+    .login-side { display: none; }
+}
+
+/* ---------------- Sidebar responsiva (mobile) ---------------- */
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        z-index: 1040;
+        margin-left: -250px;
+        height: 100vh;
+    }
+    .sidebar.show { margin-left: 0; box-shadow: 0 0 40px rgba(0,0,0,.35); }
+    .sidebar-backdrop {
+        display: none;
+        position: fixed; inset: 0;
+        background: rgba(0,0,0,.4);
+        z-index: 1035;
+    }
+    .sidebar-backdrop.show { display: block; }
+}
+
+/* ---------------- Rodapé ---------------- */
+.app-footer {
+    padding: 1rem 1.25rem;
+    color: var(--tinta-suave);
+    font-size: .8rem;
+    text-align: center;
+}
+.modulo {
+  display: none;
+}
+
+.modulo.ativo {
+  display: block;
+}

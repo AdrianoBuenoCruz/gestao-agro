@@ -1,0 +1,12 @@
+# Credenciais e configuração local
+/conexao.php
+.env
+.env.*
+!.env.example
+
+# Arquivos gerados no servidor e cópias locais
+error_log
+*.log
+*.zip
+node_modules/
+vendor/
