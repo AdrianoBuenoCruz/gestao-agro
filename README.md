@@ -2,6 +2,8 @@
 
 Sistema web de gestão agrícola desenvolvido por **Adriano Bueno** como projeto do Bacharelado em Sistemas de Informação da **Universidade Estadual de Goiás (UEG)**.
 
+**Status do sistema: versão acadêmica concluída** · **Documentação do TCC: em revisão**
+
 O projeto reúne dados de safras, produção, finanças, equipamentos e equipe em um painel para apoiar o acompanhamento de uma propriedade rural.
 
 ## Visão do sistema
@@ -45,7 +47,7 @@ Os arquivos SQL contêm estrutura e dados iniciais de configuração da fazenda,
 
 ## Estado do projeto
 
-Este repositório publica o **protótipo acadêmico** e a imagem do painel. A documentação do TCC está em revisão. As integrações de login com Google e recuperação de senha presentes no código ainda precisam de ajustes antes de qualquer implantação pública. Faça a avaliação e configuração de segurança adequadas ao seu ambiente antes de disponibilizar o sistema na internet.
+A **versão acadêmica do sistema está concluída**. Este repositório publica o código e a imagem do painel; a documentação do TCC segue em revisão. As integrações de login com Google e recuperação de senha presentes no código ainda precisam de ajustes antes de qualquer implantação pública. Faça a avaliação e configuração de segurança adequadas ao seu ambiente antes de disponibilizar o sistema na internet.
 
 Arquivos locais de conexão, logs e backups não fazem parte do repositório.
 
