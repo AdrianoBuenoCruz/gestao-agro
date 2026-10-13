@@ -1,0 +1,35 @@
+name: Verificar sintaxe PHP
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  php-lint:
+    name: PHP 8.3 - sintaxe
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: none
+          coverage: none
+      - name: Verificar sintaxe dos arquivos PHP
+        shell: bash
+        run: |
+          set -euo pipefail
+          count=0
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+            count=$((count + 1))
+          done < <(find . -type f -name '*.php' -not -path './vendor/*' -not -path './.git/*' -print0)
+          echo "Arquivos PHP verificados: $count"
